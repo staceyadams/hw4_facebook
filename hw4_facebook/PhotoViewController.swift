@@ -10,10 +10,15 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet weak var photoDetail: UIImageView!
+    var photoDetailImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        photoDetail.image = photoDetailImage
     }
 
     override func didReceiveMemoryWarning() {
