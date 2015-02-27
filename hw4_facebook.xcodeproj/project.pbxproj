@@ -11,6 +11,7 @@
 		B5442E7A1AA006A3004DA14F /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5442E791AA006A3004DA14F /* NotificationsViewController.swift */; };
 		B5442E7C1AA00800004DA14F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5442E7B1AA00800004DA14F /* SettingsViewController.swift */; };
 		B5442E7E1AA00A0C004DA14F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5442E7D1AA00A0C004DA14F /* FeedViewController.swift */; };
+		B5442E801AA01D48004DA14F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5442E7F1AA01D48004DA14F /* PhotoViewController.swift */; };
 		B5FF4E341A9ED2FD007E2033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF4E331A9ED2FD007E2033 /* AppDelegate.swift */; };
 		B5FF4E361A9ED2FD007E2033 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF4E351A9ED2FD007E2033 /* ViewController.swift */; };
 		B5FF4E391A9ED2FD007E2033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FF4E371A9ED2FD007E2033 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		B5442E791AA006A3004DA14F /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		B5442E7B1AA00800004DA14F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B5442E7D1AA00A0C004DA14F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B5442E7F1AA01D48004DA14F /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		B5FF4E2E1A9ED2FD007E2033 /* hw4_facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw4_facebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FF4E321A9ED2FD007E2033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FF4E331A9ED2FD007E2033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				B5FF4E331A9ED2FD007E2033 /* AppDelegate.swift */,
 				B5FF4E351A9ED2FD007E2033 /* ViewController.swift */,
 				B5FF4E371A9ED2FD007E2033 /* Main.storyboard */,
+				B5442E7F1AA01D48004DA14F /* PhotoViewController.swift */,
 				B5442E7D1AA00A0C004DA14F /* FeedViewController.swift */,
 				B5442E7B1AA00800004DA14F /* SettingsViewController.swift */,
 				B5442E791AA006A3004DA14F /* NotificationsViewController.swift */,
@@ -228,6 +231,7 @@
 				B5442E781AA002E9004DA14F /* RequestsViewController.swift in Sources */,
 				B5FF4E341A9ED2FD007E2033 /* AppDelegate.swift in Sources */,
 				B5442E7C1AA00800004DA14F /* SettingsViewController.swift in Sources */,
+				B5442E801AA01D48004DA14F /* PhotoViewController.swift in Sources */,
 				B5442E7E1AA00A0C004DA14F /* FeedViewController.swift in Sources */,
 				B5442E7A1AA006A3004DA14F /* NotificationsViewController.swift in Sources */,
 			);

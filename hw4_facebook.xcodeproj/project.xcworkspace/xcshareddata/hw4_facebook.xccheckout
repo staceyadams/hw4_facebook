@@ -12,20 +12,24 @@
 	<dict>
 		<key>281CFE47B6114B32DBAD7858CF21C07B881BD0DF</key>
 		<string>https://github.com/staceyadams/hw1_dropbox.git</string>
+		<key>A56B43DE70EFF00642789BCD7A6E4CE83AE891CA</key>
+		<string>https://github.com/staceyadams/hw4_facebook.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>hw4_facebook/hw4_facebook.xcodeproj</string>
+	<string>hw4_facebook.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>281CFE47B6114B32DBAD7858CF21C07B881BD0DF</key>
 		<string>../../..</string>
+		<key>A56B43DE70EFF00642789BCD7A6E4CE83AE891CA</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/staceyadams/hw1_dropbox.git</string>
+	<string>https://github.com/staceyadams/hw4_facebook.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>281CFE47B6114B32DBAD7858CF21C07B881BD0DF</string>
+	<string>A56B43DE70EFF00642789BCD7A6E4CE83AE891CA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>281CFE47B6114B32DBAD7858CF21C07B881BD0DF</string>
 			<key>IDESourceControlWCCName</key>
-			<string>bootcamp</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A56B43DE70EFF00642789BCD7A6E4CE83AE891CA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hw4_facebook</string>
 		</dict>
 	</array>
 </dict>
