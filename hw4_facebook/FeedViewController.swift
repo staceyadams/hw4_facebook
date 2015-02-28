@@ -3,7 +3,7 @@
 //  hw4_facebook
 //
 //  Created by Stacey Adams on 2/26/15.
-//  Copyright (c) 2015 Codepath. All rights reserved.
+//  Copyright (c) 2015 Stacey Adams. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     var selectedImageView: UIImageView!
     var movingImageView: UIImageView!
+    var blackView: UIView!
+    
     
   //  var interactiveTransition: UIPercentDrivenInteractiveTransition!
     
@@ -62,38 +64,71 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning)
     {
-        println("animating transition")
         var containerView = transitionContext.containerView()
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
+        // hide original and new copies
+//        var feedViewController = fromViewController as FeedViewController
+//            feedViewController.selectedImageView.hidden = true
+//        var photoViewController = toViewController as PhotoViewController
+//            photoViewController.photoDetail.hidden = true
+        
+        
         // make a copy of the image
         movingImageView = UIImageView(frame: selectedImageView.frame)
         movingImageView.image = selectedImageView.image
-        movingImageView.contentMode = selectedImageView.contentMode
-        movingImageView.clipsToBounds = selectedImageView.clipsToBounds
+        movingImageView.contentMode = selectedImageView.contentMode // fit to scale, etc.
+        movingImageView.clipsToBounds = selectedImageView.clipsToBounds // overflow
         
-        // add to the window that contains everything
-        var window = UIApplication.sharedApplication().keyWindow!;window.addSubview(movingImageView)
+        // retreive the window that is created by iOS and add a view to it
+        var window = UIApplication.sharedApplication().keyWindow!;
+            window.addSubview(movingImageView)
+        var startFrame = window.convertRect(selectedImageView.frame, fromView: scrollView)
+        println(startFrame)
         
-        
-        
-        if (isPresenting) {
+        if (isPresenting)
+        {
+            
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            
+            // setup for black background
+            blackView = UIView(frame: fromViewController.view.frame)
+            blackView.backgroundColor = UIColor.blackColor()
+            blackView.alpha = 0
+            containerView.addSubview(blackView)
+            containerView.addSubview(toViewController.view)
+            
+            
+            movingImageView.frame = startFrame
+            
+            
+            UIView.animateWithDuration(0.4, animations:
+            { () -> Void in
                 toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
+                self.blackView.alpha = 1
+            })
+            {
+                (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
+                    
+                    // remove original image from view
+                    self.movingImageView.removeFromSuperview()
+                
+             //   self.movingImageView.frame = photoViewController.photoDetail.frame
             }
         } else
         {
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 fromViewController.view.alpha = 0
+                self.blackView.alpha = 0
                 })
                 { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
+                    self.movingImageView.removeFromSuperview()
+                    self.blackView.removeFromSuperview()
                 }
         }
     }

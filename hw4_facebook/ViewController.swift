@@ -3,7 +3,7 @@
 //  hw4_facebook
 //
 //  Created by Stacey Adams on 2/25/15.
-//  Copyright (c) 2015 Codepath. All rights reserved.
+//  Copyright (c) 2015 Stacey Adams. All rights reserved.
 //
 
 import UIKit

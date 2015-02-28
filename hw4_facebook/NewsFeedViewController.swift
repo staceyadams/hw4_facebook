@@ -1,23 +1,19 @@
 //
-//  NotificationsViewController.swift
+//  NewsFeedViewController.swift
 //  hw4_facebook
 //
-//  Created by Stacey Adams on 2/26/15.
-//  Copyright (c) 2015 Stacey Adams. All rights reserved.
+//  Created by Stacey Adams on 2/28/15.
+//  Copyright (c) 2015 Codepath. All rights reserved.
 //
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class NewsFeedViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var notificationsImage: UIImageView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        scrollView.contentSize = notificationsImage.frame.size
     }
 
     override func didReceiveMemoryWarning() {
