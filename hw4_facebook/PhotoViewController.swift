@@ -27,7 +27,7 @@ class PhotoViewController: UIViewController {
         
         photoDetail.image = photoDetailImage
         photoDetail.frame = endFrame
-        view = blackView
+        photoViewBG = blackView
     }
 
     override func didReceiveMemoryWarning() {

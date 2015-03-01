@@ -47,7 +47,7 @@ class ImageTransition: BaseTransition {
         UIView.animateWithDuration(duration, animations: {
         
          self.blackView.alpha = 1
-            photoViewController.photoViewBG.alpha = 0
+           // photoViewController.photoViewBG.alpha = 0
             
          movingImageView.frame = self.endFrame
             
