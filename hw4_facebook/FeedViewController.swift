@@ -14,6 +14,7 @@ class FeedViewController: UIViewController {
     var movingImageView: UIImageView!
     var fadeTransition: FadeTransition!
     var imageTransition: ImageTransition!
+    var endFrame: CGRect!
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -49,15 +50,21 @@ class FeedViewController: UIViewController {
         var destinationVC = segue.destinationViewController as PhotoViewController
         destinationVC.photoDetailImage = selectedImageView.image
         
+        var height = (selectedImageView.image!.size.height*320)/selectedImageView.image!.size.width
+        endFrame = CGRect(x: 0, y: (self.view.frame.size.height - height)/2, width: 320, height: height)
+        
         fadeTransition = FadeTransition()
         imageTransition = ImageTransition()
-        
-       imageTransition.duration = 1
+        imageTransition.endFrame = endFrame
+        imageTransition.duration = 0.5
         
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = imageTransition
+        destinationVC.endFrame = endFrame
         
-    }
+        
+        
+     }
    
 
     

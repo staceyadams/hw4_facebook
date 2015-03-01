@@ -9,6 +9,8 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
+  
+    var endFrame:CGRect!
 
     @IBOutlet weak var photoDetail: UIImageView!
     var photoDetailImage: UIImage!
@@ -20,6 +22,7 @@ class PhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         photoDetail.image = photoDetailImage
+        photoDetail.frame = endFrame
     }
 
     override func didReceiveMemoryWarning() {

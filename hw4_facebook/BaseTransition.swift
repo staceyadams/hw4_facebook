@@ -15,6 +15,7 @@ class BaseTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewCon
     var isInteractive: Bool = false
     var transitionContext: UIViewControllerContextTransitioning!
     var interactiveTransition: UIPercentDrivenInteractiveTransition!
+    var endFrame: CGRect!
     
     var percentComplete: CGFloat = 0 {
         didSet {
