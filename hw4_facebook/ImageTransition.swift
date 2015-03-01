@@ -53,7 +53,6 @@ class ImageTransition: BaseTransition {
         UIView.animateWithDuration(duration, animations: {
         
          self.blackView.alpha = 1
-            
          movingImageView.frame = self.endFrame
             
             }) { (finished: Bool) -> Void in
@@ -62,6 +61,7 @@ class ImageTransition: BaseTransition {
               toViewController.view.alpha = 1
               photoViewController.photoDetail.hidden = false // unhide the real image
               movingImageView.removeFromSuperview() // make the copy go away
+              self.blackView.alpha = 0
         }
     }
     

@@ -29,6 +29,8 @@ class PhotoViewController: UIViewController {
         photoDetail.frame = endFrame
         blackView = photoViewBG
         //println("PVC: \(blackView)")
+        
+        blackView.backgroundColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,10 +70,7 @@ class PhotoViewController: UIViewController {
             { () -> Void in
                 self.doneButton.alpha = 0
                 self.photoActions.alpha = 0
-             // self.photoViewBG.alpha = 0
-                self.blackView.alpha = 0
-                
-                println("alpha: \(self.blackView.alpha)")
+                self.blackView.alpha = 0.5
             })
  
         } else if (sender.state == UIGestureRecognizerState.Ended)
@@ -81,14 +80,14 @@ class PhotoViewController: UIViewController {
                 dismissViewControllerAnimated(true, completion: nil)
             }
                 
-            else
+            else // @TODO: THIS NEEDS TO BE IN THE CHANGED STATE
             {
                 photoDetail.center = photoDetailImageStart
                 UIView.animateWithDuration(0.2, animations:
                     { () -> Void in
                         self.doneButton.alpha = 1
                         self.photoActions.alpha = 1
-//                        self.photoViewBG.alpha = 0
+                        self.blackView.alpha = 1
                 })
             }
         }
