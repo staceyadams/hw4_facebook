@@ -40,21 +40,26 @@ class ImageTransition: BaseTransition {
         blackView.backgroundColor = UIColor.blackColor()
         blackView.alpha = 0
         containerView.addSubview(blackView)
-        containerView.addSubview(toViewController.view)
-
+        // containerView.addSubview(toViewController.view)
+        // println("IT: \(blackView)")
+        
+        // send blackView to photo VC and make it appear below main view
+        photoViewController.blackView = photoViewController.view
+        containerView.insertSubview(photoViewController.blackView, belowSubview: photoViewController.view)
+        
+        
         toViewController.view.alpha = 0
 
         UIView.animateWithDuration(duration, animations: {
         
          self.blackView.alpha = 1
-           // photoViewController.photoViewBG.alpha = 0
             
          movingImageView.frame = self.endFrame
             
             }) { (finished: Bool) -> Void in
                 self.finish()
                 
-                toViewController.view.alpha = 1
+              toViewController.view.alpha = 1
               photoViewController.photoDetail.hidden = false // unhide the real image
               movingImageView.removeFromSuperview() // make the copy go away
         }

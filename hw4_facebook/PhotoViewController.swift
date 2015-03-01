@@ -27,7 +27,8 @@ class PhotoViewController: UIViewController {
         
         photoDetail.image = photoDetailImage
         photoDetail.frame = endFrame
-        photoViewBG = blackView
+        blackView = photoViewBG
+        //println("PVC: \(blackView)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,8 +68,10 @@ class PhotoViewController: UIViewController {
             { () -> Void in
                 self.doneButton.alpha = 0
                 self.photoActions.alpha = 0
-//                self.photoViewBG.alpha = 0
+             // self.photoViewBG.alpha = 0
                 self.blackView.alpha = 0
+                
+                println("alpha: \(self.blackView.alpha)")
             })
  
         } else if (sender.state == UIGestureRecognizerState.Ended)

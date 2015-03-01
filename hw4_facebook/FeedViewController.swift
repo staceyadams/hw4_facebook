@@ -49,20 +49,23 @@ class FeedViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
         var destinationVC = segue.destinationViewController as PhotoViewController
-        destinationVC.photoDetailImage = selectedImageView.image
+
         
+        // math that solves clipping/jumping issue on square thumbnails, and places photos into place without sizing weirdly (large) on the photo view
         var height = (selectedImageView.image!.size.height*320)/selectedImageView.image!.size.width
         endFrame = CGRect(x: 0, y: (self.view.frame.size.height - height)/2, width: 320, height: height)
         
         fadeTransition = FadeTransition()
         imageTransition = ImageTransition()
         imageTransition.endFrame = endFrame
-        imageTransition.blackView = blackView
         imageTransition.duration = 0.5
         
+    
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = imageTransition
+        destinationVC.photoDetailImage = selectedImageView.image
         destinationVC.endFrame = endFrame
+        
      }
    
 
