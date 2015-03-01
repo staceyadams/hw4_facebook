@@ -48,4 +48,33 @@ class PhotoViewController: UIViewController {
     }
     
     
+    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+        var translation = sender.translationInView(view)
+        var location = sender.locationInView(view)
+        var velocity = sender.velocityInView(view)
+        
+        
+        if (sender.state == UIGestureRecognizerState.Began)
+        {
+            
+        } else if (sender.state == UIGestureRecognizerState.Changed)
+        {
+            if velocity.y > 30
+            {
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+                
+            else
+            {
+                dismissViewControllerAnimated(false, completion: nil)
+            }
+            
+        } else if (sender.state == UIGestureRecognizerState.Ended)
+        {
+            
+        }
+    }
+    
+    
+    
 }
