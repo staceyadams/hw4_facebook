@@ -23,14 +23,9 @@ class ImageTransition: BaseTransition {
         var photoViewController = toViewController as PhotoViewController
             photoViewController.photoDetail.hidden = true
         
-        
         // make a copy of the image
         var movingImageView = UIImageView(image: feedViewController.selectedImageView.image) // the image jpg
-//        movingImageView.frame = feedViewController.selectedImageView.frame
-//        movingImageView.contentMode = feedViewController.selectedImageView.contentMode // fit to scale, etc.
-//        movingImageView.contentMode = .ScaleAspectFit
-        movingImageView.contentMode = feedViewController.selectedImageView.contentMode
-       
+        movingImageView.contentMode = feedViewController.selectedImageView.contentMode // fit to scale, etc.
         movingImageView.clipsToBounds = feedViewController.selectedImageView.clipsToBounds // overflow
         containerView.addSubview(movingImageView) // create the copy as a subview
 
@@ -49,7 +44,6 @@ class ImageTransition: BaseTransition {
 
         UIView.animateWithDuration(duration, animations: {
         
-            
          self.blackView.alpha = 1
          movingImageView.frame = self.endFrame
             
@@ -57,7 +51,7 @@ class ImageTransition: BaseTransition {
                 self.finish()
                 
               toViewController.view.alpha = 1
-              photoViewController.photoDetail.hidden = false //unhide the real image
+              photoViewController.photoDetail.hidden = false // unhide the real image
               movingImageView.removeFromSuperview() // make the copy go away
         }
     }
@@ -72,17 +66,17 @@ class ImageTransition: BaseTransition {
         photoViewController.photoDetail.hidden = false
         feedViewController.selectedImageView.hidden = false
         
-       //  make a copy of the image
-        var movingImageView = UIImageView(image: photoViewController.photoDetail.image) // the image jpg
+        //  make a copy of the image
+        var movingImageView = UIImageView(image: photoViewController.photoDetail.image)
         movingImageView.contentMode = feedViewController.selectedImageView.contentMode
-        movingImageView.clipsToBounds = photoViewController.photoDetail.clipsToBounds // overflow
+        movingImageView.clipsToBounds = photoViewController.photoDetail.clipsToBounds
         containerView.addSubview(movingImageView) // create the copy as a subview
         
         var frame = containerView.convertRect(feedViewController.selectedImageView.frame, fromView: feedViewController.scrollView)
 
         fromViewController.view.alpha = 0
         UIView.animateWithDuration(duration, animations: {
-            self.blackView.alpha = 0
+            self.blackView.alpha = 0.5
             movingImageView.frame = frame
             }) { (finished: Bool) -> Void in
                 self.finish()

@@ -41,6 +41,8 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="KFx-eu-OOy" id="u6Z-Dn-5ZL"/>
+                        <outlet property="photoActions" destination="IyJ-XG-9cW" id="AhT-89-WmM"/>
                         <outlet property="photoDetail" destination="lAW-7V-oFd" id="Wjx-e4-b6x"/>
                     </connections>
                 </viewController>
@@ -79,7 +81,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="00o-pf-dbo">
-                                        <rect key="frame" x="4" y="84" width="154" height="152"/>
+                                        <rect key="frame" x="5" y="82" width="154" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                         <gestureRecognizers/>

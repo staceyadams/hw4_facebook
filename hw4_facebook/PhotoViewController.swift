@@ -10,11 +10,15 @@ import UIKit
 
 class PhotoViewController: UIViewController {
   
-    var endFrame:CGRect!
-
+    
+    @IBOutlet weak var doneButton: UIImageView!
+    @IBOutlet weak var photoActions: UIImageView!
     @IBOutlet weak var photoDetail: UIImageView!
     var photoDetailImage: UIImage!
-    @IBOutlet weak var scrollView: UIScrollView!
+    var photoDetailImageStart: CGPoint!
+    var endFrame:CGRect!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,28 +54,36 @@ class PhotoViewController: UIViewController {
     
     @IBAction func didPan(sender: UIPanGestureRecognizer) {
         var translation = sender.translationInView(view)
-        var location = sender.locationInView(view)
-        var velocity = sender.velocityInView(view)
-        
-        
         if (sender.state == UIGestureRecognizerState.Began)
         {
-            
+            photoDetailImageStart = photoDetail.center
         } else if (sender.state == UIGestureRecognizerState.Changed)
         {
-            if velocity.y > 30
+            photoDetail.center = CGPoint(x: photoDetailImageStart.x, y: photoDetailImageStart.y + translation.y)
+           // println(photoDetail.center)
+            
+            UIView.animateWithDuration(0.2, animations:
+            { () -> Void in
+                self.doneButton.alpha = 0
+                self.photoActions.alpha = 0
+            })
+ 
+        } else if (sender.state == UIGestureRecognizerState.Ended)
+        {
+            if photoDetail.center.y > 300
             {
                 dismissViewControllerAnimated(true, completion: nil)
             }
                 
             else
             {
-                dismissViewControllerAnimated(false, completion: nil)
+                photoDetail.center = photoDetailImageStart
+                UIView.animateWithDuration(0.2, animations:
+                    { () -> Void in
+                        self.doneButton.alpha = 1
+                        self.photoActions.alpha = 1
+                })
             }
-            
-        } else if (sender.state == UIGestureRecognizerState.Ended)
-        {
-            
         }
     }
     

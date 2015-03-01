@@ -61,13 +61,7 @@ class FeedViewController: UIViewController {
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = imageTransition
         destinationVC.endFrame = endFrame
-        
-        
-        
      }
    
 
-    
-    
-    
 }
