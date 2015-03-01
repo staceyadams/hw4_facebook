@@ -10,7 +10,7 @@ import UIKit
 
 class ImageTransition: BaseTransition {
     
-    var blackView: UIView!
+   // var blackView: UIView!
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController)
     {
@@ -23,6 +23,7 @@ class ImageTransition: BaseTransition {
         var photoViewController = toViewController as PhotoViewController
             photoViewController.photoDetail.hidden = true
         
+        
         // make a copy of the image
         var movingImageView = UIImageView(image: feedViewController.selectedImageView.image) // the image jpg
         movingImageView.contentMode = feedViewController.selectedImageView.contentMode // fit to scale, etc.
@@ -33,24 +34,27 @@ class ImageTransition: BaseTransition {
         var frame = containerView.convertRect(feedViewController.selectedImageView.frame, fromView: feedViewController.scrollView)
         movingImageView.frame = frame
         
+
         // create black background
         blackView = UIView(frame: fromViewController.view.frame)
         blackView.backgroundColor = UIColor.blackColor()
         blackView.alpha = 0
         containerView.addSubview(blackView)
         containerView.addSubview(toViewController.view)
-  
+
         toViewController.view.alpha = 0
 
         UIView.animateWithDuration(duration, animations: {
         
          self.blackView.alpha = 1
+            photoViewController.photoViewBG.alpha = 0
+            
          movingImageView.frame = self.endFrame
             
             }) { (finished: Bool) -> Void in
                 self.finish()
                 
-              toViewController.view.alpha = 1
+                toViewController.view.alpha = 1
               photoViewController.photoDetail.hidden = false // unhide the real image
               movingImageView.removeFromSuperview() // make the copy go away
         }
@@ -76,7 +80,7 @@ class ImageTransition: BaseTransition {
 
         fromViewController.view.alpha = 0
         UIView.animateWithDuration(duration, animations: {
-            self.blackView.alpha = 0.5
+            self.blackView.alpha = 0
             movingImageView.frame = frame
             }) { (finished: Bool) -> Void in
                 self.finish()

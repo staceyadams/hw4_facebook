@@ -12,6 +12,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="pB7-X6-TRu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_actions" id="IyJ-XG-9cW">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,6 +49,7 @@
                         <outlet property="doneButton" destination="KFx-eu-OOy" id="u6Z-Dn-5ZL"/>
                         <outlet property="photoActions" destination="IyJ-XG-9cW" id="AhT-89-WmM"/>
                         <outlet property="photoDetail" destination="lAW-7V-oFd" id="Wjx-e4-b6x"/>
+                        <outlet property="photoViewBG" destination="pB7-X6-TRu" id="tag-dI-wpJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hT8-K5-Oop" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,7 +59,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-254" y="2412"/>
+            <point key="canvasLocation" x="-254" y="2449"/>
         </scene>
         <!--News Feed-->
         <scene sceneID="ufC-wZ-h7g">
@@ -413,6 +419,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYy-le-DJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-254" y="1113"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rnf-E0-LP1">
+            <objects>
+                <viewController id="pPV-aZ-MyA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gQr-fT-Cgq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYw-Nm-QlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

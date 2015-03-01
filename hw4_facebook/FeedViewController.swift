@@ -15,6 +15,7 @@ class FeedViewController: UIViewController {
     var fadeTransition: FadeTransition!
     var imageTransition: ImageTransition!
     var endFrame: CGRect!
+    var blackView: UIView!
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,6 +57,7 @@ class FeedViewController: UIViewController {
         fadeTransition = FadeTransition()
         imageTransition = ImageTransition()
         imageTransition.endFrame = endFrame
+        imageTransition.blackView = blackView
         imageTransition.duration = 0.5
         
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom

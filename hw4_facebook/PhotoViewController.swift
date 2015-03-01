@@ -11,14 +11,14 @@ import UIKit
 class PhotoViewController: UIViewController {
   
     
+    @IBOutlet weak var photoViewBG: UIView!
     @IBOutlet weak var doneButton: UIImageView!
     @IBOutlet weak var photoActions: UIImageView!
     @IBOutlet weak var photoDetail: UIImageView!
     var photoDetailImage: UIImage!
     var photoDetailImageStart: CGPoint!
     var endFrame:CGRect!
-    
-    
+    var blackView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class PhotoViewController: UIViewController {
         
         photoDetail.image = photoDetailImage
         photoDetail.frame = endFrame
+        view = blackView
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +67,8 @@ class PhotoViewController: UIViewController {
             { () -> Void in
                 self.doneButton.alpha = 0
                 self.photoActions.alpha = 0
+//                self.photoViewBG.alpha = 0
+                self.blackView.alpha = 0
             })
  
         } else if (sender.state == UIGestureRecognizerState.Ended)
@@ -82,6 +85,7 @@ class PhotoViewController: UIViewController {
                     { () -> Void in
                         self.doneButton.alpha = 1
                         self.photoActions.alpha = 1
+//                        self.photoViewBG.alpha = 0
                 })
             }
         }
