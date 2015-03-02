@@ -56,8 +56,10 @@ class PhotoViewController: UIViewController {
     }
     
     
-    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+    @IBAction func didPan(sender: UIPanGestureRecognizer)
+    {
         var translation = sender.translationInView(view)
+        var velocity = sender.velocityInView(view)
         if (sender.state == UIGestureRecognizerState.Began)
         {
             photoDetailImageStart = photoDetail.center
@@ -66,13 +68,20 @@ class PhotoViewController: UIViewController {
             photoDetail.center = CGPoint(x: photoDetailImageStart.x, y: photoDetailImageStart.y + translation.y)
            // println(photoDetail.center)
             
-            UIView.animateWithDuration(0.2, animations:
-            { () -> Void in
-                self.doneButton.alpha = 0
-                self.photoActions.alpha = 0
-                self.blackView.alpha = 0.5
-            })
- 
+            if velocity.y > 0
+            {
+                UIView.animateWithDuration(0.2, animations:
+                { () -> Void in
+                    self.doneButton.alpha = 0
+                    self.photoActions.alpha = 0
+                    self.blackView.alpha = 0.5
+                })
+            } else
+            {
+                photoViewDoesNothing()
+            }
+            
+
         } else if (sender.state == UIGestureRecognizerState.Ended)
         {
             if photoDetail.center.y > 300
@@ -80,19 +89,21 @@ class PhotoViewController: UIViewController {
                 dismissViewControllerAnimated(true, completion: nil)
             }
                 
-            else // @TODO: THIS NEEDS TO BE IN THE CHANGED STATE
+            else
             {
-                photoDetail.center = photoDetailImageStart
-                UIView.animateWithDuration(0.2, animations:
-                    { () -> Void in
-                        self.doneButton.alpha = 1
-                        self.photoActions.alpha = 1
-                        self.blackView.alpha = 1
-                })
+                photoViewDoesNothing()
             }
         }
     }
+
     
+    func photoViewDoesNothing()
+    {
+        photoDetail.center = photoDetailImageStart
+        self.doneButton.alpha = 1
+        self.photoActions.alpha = 1
+        self.blackView.alpha = 1
+    }
     
     
 }
