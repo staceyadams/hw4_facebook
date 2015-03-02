@@ -26,6 +26,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="zKH-ag-NIx" appends="YES" id="5uw-jU-7VX"/>
+                                    <outletCollection property="gestureRecognizers" destination="FGe-JD-cEC" appends="YES" id="560-CO-5nH"/>
                                 </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneButton" id="KFx-eu-OOy">
@@ -57,6 +58,11 @@
                         <action selector="didPan:" destination="goi-V5-y40" id="dyt-G7-jsB"/>
                     </connections>
                 </panGestureRecognizer>
+                <pinchGestureRecognizer id="FGe-JD-cEC">
+                    <connections>
+                        <action selector="didPinch:" destination="goi-V5-y40" id="tvU-3l-RB6"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-254" y="2449"/>
         </scene>

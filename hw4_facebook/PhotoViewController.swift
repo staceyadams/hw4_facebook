@@ -97,6 +97,28 @@ class PhotoViewController: UIViewController {
     }
 
     
+    @IBAction func didPinch(sender: UIPinchGestureRecognizer) {
+        var scale = sender.scale
+        // var velocity = sender.velocity
+        
+        if (sender.state == UIGestureRecognizerState.Began)
+        {
+            
+        } else if (sender.state == UIGestureRecognizerState.Changed)
+        {
+            photoDetail.transform = CGAffineTransformMakeScale(photoDetailImage.scale * scale * 0.5, photoDetailImage.scale * scale * 0.5)
+            
+        } else if (sender.state == UIGestureRecognizerState.Ended)
+        {
+            if scale < 1
+            {
+               photoDetail.transform = CGAffineTransformMakeScale(1, 1)
+            }
+            
+        }
+    }
+    
+    
     func photoViewDoesNothing()
     {
         photoDetail.center = photoDetailImageStart
